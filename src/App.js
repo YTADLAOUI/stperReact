@@ -17,7 +17,7 @@ function App(){
   )
   return(
     <div>
-      <div className="close" onClick={()=>(setOpen(!isOpen))}>&times;</div>
+      <div className="close" onClick={()=>(setOpen((is)=>!is))}>&times;</div>
   { isOpen && (<div className="steps">
     <div className="numbers">
         <div className={`${step==1 ?'active':""}`}>
@@ -36,6 +36,7 @@ function App(){
       <button style={{backgroundColor:'#7950F2',color:'#fff'}} onClick={incrementStep}>Next</button>
     </div>
   </div>)}
+  <p>Today is {new Date().toDateString()}</p>
   </div>
   )
 }
